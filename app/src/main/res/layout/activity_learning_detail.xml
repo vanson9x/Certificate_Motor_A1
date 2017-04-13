@@ -5,15 +5,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:background="#ffff">
-
+        // them tu cho nay
+        <LinearLayout
+            android:id="@+id/layoutHuy"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/txtHuy"
+                android:inputType="number"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnHuy"
+                android:text="Chọn câu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        // den cho nay
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_below="@+id/layoutHuy"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">

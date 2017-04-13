@@ -21,6 +21,7 @@ import com.fithou.vanson.certificate_motor_a1.model.Custom_Row_Answer;
 import com.fithou.vanson.certificate_motor_a1.model.Question;
 import com.fithou.vanson.certificate_motor_a1.model.myResource;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by vanson on 3/23/2017.
@@ -56,6 +57,30 @@ public class LearningDetail extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this,e.toString(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+
+        // them cho nay trong file LearningDetail.java
+        final TextView txtHuy = (TextView) findViewById(R.id.txtHuy);
+        Button btnHuy = (Button) findViewById(R.id.btnHuy);
+        btnHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    int cau = Integer.parseInt(txtHuy.getText().toString());
+                    if (cau >= getIndexBegin() && cau <= getIndexEnd())
+                        createListViewAnswer(cau);
+                    else
+                        Toast.makeText(LearningDetail.this, "Vui long nhap tu "+
+                                getIndexBegin()+" toi "+getIndexEnd()
+                                , Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        // den cho nay
     }
 
     // Sự kiện click vào Toggle trên Actionbar
