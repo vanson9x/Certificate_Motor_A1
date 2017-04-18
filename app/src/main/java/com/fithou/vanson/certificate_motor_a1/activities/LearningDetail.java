@@ -68,7 +68,7 @@ public class LearningDetail extends AppCompatActivity implements View.OnClickLis
                 try {
                     int cau = Integer.parseInt(txtHuy.getText().toString());
                     if (cau >= getIndexBegin() && cau <= getIndexEnd())
-                        createListViewAnswer(cau);
+                        createListViewAnswer(cau-1);
                     else
                         Toast.makeText(LearningDetail.this, "Vui long nhap tu "+
                                 getIndexBegin()+" toi "+getIndexEnd()
